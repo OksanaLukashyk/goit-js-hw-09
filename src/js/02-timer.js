@@ -84,7 +84,7 @@ function startTimer() {
     dateInput.disabled = true;
     startBtn.disabled = true;
     startDate += 1000;
-    formattedTimeDiff = convertMs(timeDiff);
+    let formattedTimeDiff = convertMs(timeDiff);
     timerMarkup(formattedTimeDiff);
   }, 1000);
 }
