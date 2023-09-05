@@ -11,22 +11,22 @@ function onSubmit(evt) {
   let amountVal = Number(amount.value);
 
   for (let i = 1; i <= amountVal; i += 1) {
-    delayVal += stepVal;
     createPromise(i, delayVal)
       .then(({ position, delay }) => {
         Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`, {
           clickToClose: true,
-          timeout: 5000,
+          timeout: 6000,
           cssAnimationStyle: 'zoom',
         });
       })
       .catch(({ position, delay }) => {
         Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`, {
           clickToClose: true,
-          timeout: 5000,
+          timeout: 6000,
           cssAnimationStyle: 'zoom',
         });
       });
+    delayVal += stepVal;
   }
   evt.currentTarget.reset();
 }
